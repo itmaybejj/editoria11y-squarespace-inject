@@ -1,0 +1,45 @@
+<script> 
+  
+const ed11yInit = function() {
+    let ed11yConfig = {
+      // Insert custom config here as per https://github.com/itmaybejj/editoria11y
+      allowOK: false,
+          ignoreByKey: {
+              'img': '.section-background img, [aria-hidden], [aria-label], [aria-labelledby], [aria-hidden] img, [aria-label] img, [aria-labelledby] img',
+          },
+    }
+    const ed11y = new Ed11y(ed11yConfig);  
+}
+    
+  let ed11yGetScript = function() {
+    // h/t stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript.
+    let script = document.createElement('script');
+    script.async = 1;
+    script.onload = script.onreadystatechange = function( _, isAbort ) {
+      if(isAbort || !script.readyState || /loaded|complete/.test(script.readyState) ) {
+        script.onload = script.onreadystatechange = null;
+        script = undefined;
+        if(!isAbort) setTimeout(ed11yInit(), 50);
+      }
+    };
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.jsdelivr.net/gh/itmaybejj/editoria11y@2/dist/editoria11y.min.js';   
+    document.head.appendChild(script);
+  }
+ 
+  // Check 5x at increasing intervals over 2.5s for edit mode.  
+  let ed11yEditCheckCount = 0;
+  let ed11yEditCheck = function() {
+    window.setTimeout(function() {
+      let editMode = document.querySelector('.sqs-edit-mode');
+      if (!!editMode) {
+        ed11yGetScript();
+      } else if (ed11yEditCheckCount < 1000) {
+        ed11yEditCheckCount = ed11yEditCheckCount + 250;
+        ed11yEditCheck();
+      }
+    },ed11yEditCheckCount);
+  }
+  ed11yEditCheck();
+
+</script>
