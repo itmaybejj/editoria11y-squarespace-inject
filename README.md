@@ -1,5 +1,5 @@
 # editoria11y-squarespace-inject
-Code that can be added to a SquareSpace site to enable Editoria11y for site editors.
+Code that can be added to a SquareSpace site to enable [Editoria11y](https://github.com/itmaybejj/editoria11y) for site editors.
 
 Note that code injection is a premium feature on SquareSpace. As of my last check, this requires being at the "Commerce" or "Business" tier.
 
@@ -7,5 +7,5 @@ This script checks to make sure the person viewing the page can edit the page, t
 
 ## To use 
 * Open the "Settings > Advanced > Code Injection" page in your site configuration.
-* Paste the complete contents of the code.html file into the "Footer" field.
+* Paste the *contents* of [code.html](https://github.com/itmaybejj/editoria11y-squarespace-inject/blob/main/code.html) into the "Footer" field.
 * Press "Save" at the top left of the page. The preview will reload, and hopefully the Editoria11y toggle will appear.
