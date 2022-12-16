@@ -7,5 +7,5 @@ This script checks to make sure the person viewing the page can edit the page, t
 
 ## To use 
 * Open the "Settings > Advanced > Code Injection" page in your site configuration.
-* Paste the *contents* of [code.html](https://github.com/itmaybejj/editoria11y-squarespace-inject/blob/main/code.html) into the "Footer" field.
+* Paste the *entire contents* (including the "script" tags) of [code.html](https://github.com/itmaybejj/editoria11y-squarespace-inject/blob/main/code.html) into the "Footer" field.
 * Press "Save" at the top left of the page. The preview will reload, and hopefully the Editoria11y toggle will appear.
