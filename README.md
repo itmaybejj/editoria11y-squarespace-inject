@@ -1,4 +1,4 @@
-# editoria11y-squarespace-inject
+# Editoria11y Accessibility Checker for SquareSpace
 Code that can be added to a SquareSpace site to enable [Editoria11y](https://github.com/itmaybejj/editoria11y) for site editors.
 
 Note that code injection is a premium feature on SquareSpace. As of my last check, this requires being at the "Commerce" or "Business" tier.
